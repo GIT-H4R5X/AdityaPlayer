@@ -129,24 +129,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**💥 Ʌʈ🤞Fɩrsʈ 🥀 Ɱɑƙɘ ♥️ Ɱɘ ⭐ Ʌɗɱɩŋ 😎 ...**")
+                        "**ꜰɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ᴀꜱ ᴀɴ ᴀᴅᴍɪɴ ᴏꜰ ʏᴏᴜʀ ɢʀᴏᴜᴘ**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** 😎 I🤞ʌɱ 🥀 Ʀɘɑɗy ♥️ Ƭø ⭐ Ƥɭɑy 😎 ...**")
+                        message.chat.id, "** 😎 ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴘʟᴀʏ 😎 ...**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**🎸 Ƥɭɘɑsɘ ❤️ Ɱɑŋʋɑɭɭy 🥀 Ʌɗɗ 💫 Ʌssɩsʈɑŋʈ 😔 Øɤ 🎸 Ƈøŋʈɑƈʈ ❤️ ʈø : @AdityaHalder 🥀** ")
+                        f" **ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀꜱꜱᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ @CMTTANDHELP** ")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**🎸 Ƥɭɘɑsɘ ❤️ Ɱɑŋʋɑɭɭy 🥀 Ʌɗɗ 💫 Ʌssɩsʈɑŋʈ 😔 Øɤ 🎸 Ƈøŋʈɑƈʈ ❤️ ʈø : @AdityaHalder 🥀 ...*")
+            f"**ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀꜱꜱᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ @CMTTANDHELP**")
         return
     
     audio = (
@@ -305,7 +305,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**💥 Ʌɗɩtyɑ🤞Ʌɗɗɘɗ 💿 Søɳʛ❗️\n🔊 Ʌʈ 💞 Ƥøsɩʈɩøɳ » `{}` 🌷 ...**".format(position),
+            caption="**💥 Ʌɗɗɘɗ 💿 Søɳʛ❗️\n🔊 Ʌʈ 💞 Ƥøsɩʈɩøɳ » `{}` 🌷 ...**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -322,7 +322,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**💥 Ʌɗɩtyɑ🤞Mʋsɩƈ 🎸 Nøω 💞\n🔊 Ƥɭɑyɩɳʛ 😍 ØƤ 🥀 ...**".format(),
+            caption="**💥 🤞Mʋsɩƈ 🎸 Nøω 💞\n🔊 Ƥɭɑyɩɳʛ 😍 ØƤ 🥀 ...**".format(),
            )
 
     os.remove("final.png")
@@ -336,7 +336,7 @@ async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://telegra.ph/file/7d25711c4cbffd4615c51.jpg", 
-                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n▶️ Ƥɑʋsɘɗ 🌷 ...**"
+                             caption="**💥🔈 Mʋsɩƈ🤞Nøω 🥀\n▶️ Ƥɑʋsɘɗ 🌷 ...**"
     )
 
 
@@ -347,7 +347,7 @@ async def resume(_, message: Message):
     await clientbot.pytgcalls.resume_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://telegra.ph/file/7d25711c4cbffd4615c51.jpg", 
-                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏸ Ƥɭɑyɩɳʛ 🌷 ...**"
+                             caption="**💥 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏸ Ƥɭɑyɩɳʛ 🌷 ...**"
     )
 
 
@@ -362,7 +362,7 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("**💥 Ʌɗɩtyɑ 💞 Ɲøʈɦɩɳʛ 🔇\n🚫 Ƥɭɑyɩɳʛ 🌷 ...**")
+        await message.reply_text("**💥 Ɲøʈɦɩɳʛ 🔇\n🚫 Ƥɭɑyɩɳʛ 🌷 ...**")
     else:
         queues.task_done(chat_id)
         
@@ -381,7 +381,7 @@ async def skip(_, message: Message):
 
     await message.reply_photo(
                              photo="https://telegra.ph/file/7d25711c4cbffd4615c51.jpg", 
-                             caption=f'**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏩ Sƙɩƥƥɘɗ 🌷 ...**'
+                             caption=f'**💥 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏩ Sƙɩƥƥɘɗ 🌷 ...**'
    ) 
 
 
@@ -397,7 +397,7 @@ async def stop(_, message: Message):
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
     await message.reply_photo(
                              photo="https://telegra.ph/file/7d25711c4cbffd4615c51.jpg", 
-                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n❌ Sʈøƥƥɘɗ 🌷 ...**"
+                             caption="**💥🔈 Mʋsɩƈ🤞Nøω 🥀\n❌ Sʈøƥƥɘɗ 🌷 ...**"
     )
 
 
@@ -415,5 +415,5 @@ async def admincache(client, message: Message):
 
     await message.reply_photo(
                               photo="https://telegra.ph/file/7d25711c4cbffd4615c51.jpg",
-                              caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n🔥 Ʀɘɭøɑɗɘɗ 🌷 ...**"
+                              caption="**💥🔈 Mʋsɩƈ🤞Nøω 🥀\n🔥 Ʀɘɭøɑɗɘɗ 🌷 ...**"
     )
